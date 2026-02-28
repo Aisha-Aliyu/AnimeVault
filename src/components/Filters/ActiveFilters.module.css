@@ -1,0 +1,70 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: color-mix(in srgb, var(--chip-color) 14%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--chip-color) 40%, transparent);
+  border-radius: 50px;
+  color: color-mix(in srgb, var(--chip-color) 90%, #fff);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px 4px 12px;
+  letter-spacing: 0.03em;
+}
+
+.chipRemove {
+  background: none;
+  border: none;
+  color: inherit;
+  opacity: 0.5;
+  font-size: 0.65rem;
+  padding: 1px 2px;
+  border-radius: 3px;
+  transition: opacity var(--transition);
+  line-height: 1;
+}
+.chipRemove:hover { opacity: 1; }
+
+.clearAll {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  margin-left: auto;
+}
+.clearAll:hover { color: var(--text-primary); }

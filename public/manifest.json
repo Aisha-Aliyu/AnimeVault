@@ -1,0 +1,21 @@
+{
+  "name": "AnimeVault",
+  "short_name": "AnimeVault",
+  "description": "The world's most beautiful anime scene gallery",
+  "theme_color": "#6e2cf4",
+  "background_color": "#04030a",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["entertainment", "lifestyle"],
+  "screenshots": []
+}

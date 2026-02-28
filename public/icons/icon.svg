@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#04030a"/>
+  <rect x="60" y="100" width="392" height="6" rx="3" fill="#6e2cf4" opacity="0.8"/>
+  <rect x="60" y="130" width="240" height="6" rx="3" fill="#c026d3" opacity="0.6"/>
+  <text x="256" y="310" font-family="serif" font-size="140" text-anchor="middle" fill="#f0eeff" opacity="0.95">✦</text>
+  <text x="256" y="420" font-family="serif" font-size="52" text-anchor="middle" fill="#8b5cf6" letter-spacing="4">VAULT</text>
+</svg>

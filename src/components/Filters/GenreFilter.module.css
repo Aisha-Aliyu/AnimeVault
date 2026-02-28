@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 2px;
+  flex: 1;
+}
+
+.strip::-webkit-scrollbar { display: none; }
+
+.arrow {
+  background: var(--elevated);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-muted);
+  width: 30px;
+  height: 30px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition);
+  line-height: 1;
+}
+
+.arrow:hover {
+  color: var(--text-primary);
+  border-color: var(--border-bright);
+  background: var(--card);
+}
+
+/* Pill base */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  letter-spacing: 0.04em;
+  transition: all var(--transition);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.pill:hover {
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--genre-color, var(--accent)) 60%, transparent);
+  background: color-mix(in srgb, var(--genre-color, var(--accent)) 10%, transparent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--genre-color, var(--accent)) 30%, transparent);
+}
+
+/* Active genre pill */
+.pillActive {
+  color: #fff !important;
+  background: color-mix(in srgb, var(--genre-color, var(--accent)) 25%, var(--card)) !important;
+  border-color: var(--genre-color, var(--accent)) !important;
+  box-shadow:
+    0 0 16px color-mix(in srgb, var(--genre-color, var(--accent)) 40%, transparent),
+    inset 0 0 12px color-mix(in srgb, var(--genre-color, var(--accent)) 10%, transparent) !important;
+}
+
+/* "All" pill */
+.pillAll {
+  background: var(--elevated);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.pillAllActive {
+  background: linear-gradient(135deg, var(--aurora-1), var(--aurora-3)) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(139,92,246,0.4) !important;
+}

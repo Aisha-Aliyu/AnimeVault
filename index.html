@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>AnimeVault — Community Anime Scene Gallery</title>
+    <meta name="description" content="Discover and share the most beautiful anime moments. Search scenes by mood, genre, and character. Upload your favourites and build your collection." />
+    <meta name="keywords"    content="anime, scenes, gallery, screenshots, community, manga, favourites" />
+    <meta name="author"      content="AnimeVault" />
+    <meta name="robots"      content="index, follow" />
+    <link rel="canonical"    href="https://animevault.vercel.app" />
+
+    <!-- Theme -->
+    <meta name="theme-color"              content="#6e2cf4" />
+    <meta name="color-scheme"             content="dark" />
+    <meta name="mobile-web-app-capable"   content="yes" />
+    <meta name="apple-mobile-web-app-capable"            content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style"   content="black-translucent" />
+    <meta name="apple-mobile-web-app-title"              content="AnimeVault" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://animevault.vercel.app" />
+    <meta property="og:title"       content="AnimeVault — Community Anime Scene Gallery" />
+    <meta property="og:description" content="Discover and share the most beautiful anime moments. Search by mood, genre, and character." />
+    <meta property="og:image"       content="https://animevault.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale"      content="en_US" />
+    <meta property="og:site_name"   content="AnimeVault" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="AnimeVault — Community Anime Scene Gallery" />
+    <meta name="twitter:description" content="Discover and share the most beautiful anime moments." />
+    <meta name="twitter:image"       content="https://animevault.vercel.app/og-image.png" />
+
+    <!-- Icons -->
+    <link rel="icon"             type="image/svg+xml" href="/icons/icon.svg" />
+    <link rel="apple-touch-icon" href="/icons/icon.svg" />
+
+    <link rel="manifest" href="/manifest.json" />
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
+</script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

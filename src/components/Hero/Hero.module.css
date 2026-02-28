@@ -1,0 +1,200 @@
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--navbar-height) + 40px) 24px 80px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(139,92,246,0.12);
+  border: 1px solid rgba(139,92,246,0.3);
+  border-radius: 40px;
+  padding: 6px 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--aurora-5);
+  box-shadow: 0 0 8px var(--aurora-5);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+/* Title */
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: normal;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+
+.titleAccent {
+  display: block;
+  background: linear-gradient(
+    135deg,
+    var(--aurora-1) 0%,
+    var(--aurora-3) 35%,
+    var(--aurora-4) 65%,
+    var(--aurora-5) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientFlow 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(139,92,246,0.4));
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: var(--font-prose);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* CTAs */
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--aurora-1), var(--aurora-2), var(--aurora-3));
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  animation: gradientFlow 4s ease-in-out infinite;
+  box-shadow: 0 0 32px rgba(139,92,246,0.45), 0 4px 16px rgba(0,0,0,0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+  letter-spacing: 0.04em;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 48px rgba(139,92,246,0.6), 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 14px 28px;
+  transition: all var(--transition);
+  letter-spacing: 0.04em;
+}
+
+.secondaryBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 20px rgba(139,92,246,0.2);
+}
+
+/* Floating glyphs */
+.glyph {
+  position: absolute;
+  font-family: var(--font-display);
+  color: var(--aurora-1);
+  pointer-events: none;
+  animation: floatGlyph ease-in-out infinite;
+  filter: blur(0.5px);
+}
+
+/* Orbs */
+.orb1, .orb2, .orb3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(110,44,244,0.18) 0%, transparent 70%);
+  top: -100px; left: -100px;
+  animation: orbFloat1 20s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(192,38,211,0.14) 0%, transparent 70%);
+  bottom: 0; right: -80px;
+  animation: orbFloat2 25s ease-in-out infinite reverse;
+}
+
+.orb3 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbFloat1 15s ease-in-out infinite 5s;
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatGlyph {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-18px) rotate(8deg); }
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 6px var(--aurora-5); }
+  50%      { box-shadow: 0 0 16px var(--aurora-5), 0 0 30px rgba(6,214,176,0.3); }
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(3%, 2%) scale(1.05); }
+  66%      { transform: translate(-2%, 4%) scale(0.97); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0,0); }
+  50%      { transform: translate(-4%, -3%); }
+}

@@ -1,0 +1,136 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Sunday Ridges is the ONE brand font */
+  --font-display: 'SundayRidges', 'Palatino Linotype', serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-prose:   'Crimson Pro', Georgia, serif;
+  --font-mono:    'Fira Code', monospace;
+
+  /* === Cosmic Color Palette === */
+  --void:         #04030a;
+  --abyss:        #080614;
+  --deep:         #0d0b1a;
+  --surface:      #12102a;
+  --elevated:     #1a1735;
+  --card:         #1e1b3a;
+  --card-hover:   #252245;
+
+  /* Aurora accent colors */
+  --aurora-1:     #6e2cf4;   /* deep violet */
+  --aurora-2:     #c026d3;   /* magenta */
+  --aurora-3:     #e11d8f;   /* rose */
+  --aurora-4:     #0ea5e9;   /* sky */
+  --aurora-5:     #06d6b0;   /* teal */
+
+  /* Primary accent */
+  --accent:       #8b5cf6;
+  --accent-glow:  rgba(139, 92, 246, 0.4);
+  --accent-subtle:rgba(139, 92, 246, 0.12);
+
+  /* Text */
+  --text-primary:   #f0eeff;
+  --text-secondary: #a89ec9;
+  --text-muted:     #6b5f8c;
+  --text-ghost:     #3d3560;
+
+  /* Borders */
+  --border:         rgba(139, 92, 246, 0.15);
+  --border-bright:  rgba(139, 92, 246, 0.4);
+  --border-iridescent: rgba(200, 150, 255, 0.25);
+
+  /* Radius */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  24px;
+  --radius-2xl: 32px;
+
+  /* Shadows */
+  --shadow-card:  0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(139,92,246,0.1);
+  --shadow-glow:  0 0 40px rgba(139, 92, 246, 0.3);
+  --shadow-hover: 0 8px 40px rgba(0,0,0,0.6), 0 0 30px rgba(139,92,246,0.25);
+
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --navbar-height: 64px;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--void);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── The Aurora Background ────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%,  rgba(110, 44, 244, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 20%,  rgba(192, 38, 211, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 40% at 50% 80%,  rgba(14, 165, 233, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 90% 70%,  rgba(6, 214, 176, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 30% at 10% 90%,  rgba(225, 29, 143, 0.10) 0%, transparent 50%);
+  animation: auroraShift 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* ── Film Grain Overlay ───────────────────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  animation: grainDrift 0.5s steps(1) infinite;
+}
+
+@keyframes auroraShift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(-2%, 1%) scale(1.03); }
+  66%  { transform: translate(1%, -2%) scale(0.98); }
+  100% { transform: translate(2%, 1%) scale(1.02); }
+}
+
+@keyframes grainDrift {
+  0%   { transform: translate(0, 0); }
+  10%  { transform: translate(-1%, -1%); }
+  20%  { transform: translate(1%, 0); }
+  30%  { transform: translate(-2%, 1%); }
+  40%  { transform: translate(0, 2%); }
+  50%  { transform: translate(-1%, 0); }
+  60%  { transform: translate(2%, 1%); }
+  70%  { transform: translate(0, -1%); }
+  80%  { transform: translate(-1%, 2%); }
+  90%  { transform: translate(1%, -2%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139,92,246,0.6); }
+
+/* Utility */
+#root { position: relative; z-index: 2; }
+button { cursor: pointer; font-family: inherit; }
+a { text-decoration: none; color: inherit; }
+img { display: block; }
